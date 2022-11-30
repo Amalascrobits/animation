@@ -4,16 +4,17 @@ import './form.css'
 const Form = () => {
     const switchers = [...document.querySelectorAll('.switcher')]
 
-    switchers.forEach(item => {
+  
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+          console.log('This will run every second!');
+              switchers.forEach(item => {
         item.addEventListener('click', function() {
             switchers.forEach(item => item.parentElement.classList.remove('is-active'))
             this.parentElement.classList.add('is-active')
         })
     })
     
-    React.useEffect(() => {
-        const interval = setInterval(() => {
-          console.log('This will run every second!');
      
 
         }, 1000);
